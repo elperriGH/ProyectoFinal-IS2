@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, Alert } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import { Api, Producto } from '../servicio/ServicioProductos';
+import { useEffect, useState } from "react";
+import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity, Alert } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { Api, Producto } from "../servicio/ServicioProductos";
 
-export default function PantallaDetalle() {
+export default function InfoProductoScreen() {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
 
@@ -90,23 +90,29 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   botonEditar: {
-    backgroundColor: "#3b82f6",
+    backgroundColor: "#fff",
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderRadius: 25,
-    marginBottom: 12,
+    borderWidth: 2,
+    borderColor: "#3b82f6",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
     elevation: 3,
+    marginBottom: 14,
+    marginHorizontal: 20,
   },
   botonEliminar: {
     backgroundColor: "#f87171",
     paddingVertical: 16,
     paddingHorizontal: 24,
     borderRadius: 25,
-    marginBottom: 12,
+    borderWidth: 2,
+    borderColor: "#fee2e2",
+    marginBottom: 14,
+    marginHorizontal: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.1,
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   botonTexto: {
-    color: "#fff",
+    color: "#222e3a",
     textAlign: "center",
     fontWeight: "600",
     fontSize: 16,

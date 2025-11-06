@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { View, TextInput, StyleSheet, ActivityIndicator, TouchableOpacity, Text, Alert } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import { Api, Producto } from '../servicio/ServicioProductos';
+import { useEffect, useState } from "react";
+import { View, TextInput, StyleSheet, ActivityIndicator, Button, Alert } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { Api, Producto } from "../servicio/ServicioProductos";
 
-export default function PantallaModificar() {
+export default function EditarProductoScreen() {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
   
@@ -77,9 +77,7 @@ export default function PantallaModificar() {
         placeholderTextColor="#888"
        />
 
-      <TouchableOpacity style={styles.boton} onPress={guardarCambios}>
-        <Text style={styles.botonTexto}>Guardar cambios</Text>
-      </TouchableOpacity>
+      <Button title="Guardar cambios" onPress={guardarCambios} />
     </View>
   );
 }
@@ -105,23 +103,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#f7f9fc",
     justifyContent: "center",
     alignItems: "center",
-  },
-  boton: {
-    backgroundColor: "#3b82f6",
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    borderRadius: 25,
-    marginTop: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
-  },
-  botonTexto: {
-    color: "#fff",
-    textAlign: "center",
-    fontWeight: "600",
-    fontSize: 16,
   },
 });

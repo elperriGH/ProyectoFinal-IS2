@@ -1,26 +1,26 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function HomeScreen() {
+export default function InicioScreen() {
   const navigation = useNavigation<any>();
 
   return (
     <View style={styles.container}>
 
-      <Text style={styles.title}>Proyecto Final</Text>
+      <Text style={styles.title}>IS2 TP2: Consumo de APIS</Text>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("ListaProductos")}
       >
-        <Text style={styles.buttonText}>📦 Ver productos</Text>
+        <Text style={styles.buttonText}>Ver productos</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("Crear")}
       >
-        <Text style={styles.buttonText}>➕ Crear producto</Text>
+        <Text style={styles.buttonText}>Crear producto</Text>
       </TouchableOpacity>
 
     </View>
@@ -30,27 +30,35 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0f1115",
+    backgroundColor: "#f7f9fc",
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 30,
-    gap: 20,
+    paddingHorizontal: 32,
+    gap: 24,
   },
   title: {
-    color: "#eaeaea",
-    fontSize: 28,
-    fontWeight: "bold",
-    marginBottom: 40,
+    color: "#222e3a",
+    fontSize: 30,
+    fontWeight: "700",
+    marginBottom: 44,
   },
   button: {
-    backgroundColor: "#1a2738",
-    paddingVertical: 15,
-    paddingHorizontal: 24,
-    borderRadius: 12,
-    width: "100%",
+    backgroundColor: "#fff",
+    paddingVertical: 18,
+    paddingHorizontal: 32,
+    borderRadius: 30,
+    width: "90%",
+    borderWidth: 2,
+    borderColor: "#3b82f6",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+    transform: [{ scale: 1.02 }],
   },
   buttonText: {
-    color: "#b3c7ff",
+    color: "#3b82f6",
     fontSize: 18,
     textAlign: "center",
     fontWeight: "600",

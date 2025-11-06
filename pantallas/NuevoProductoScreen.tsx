@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Api } from '../servicio/ServicioProductos';
+import { useState } from "react";
+import { View, TextInput, StyleSheet, Button, Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Api } from "../servicio/ServicioProductos";
 
-export default function PantallaCrear() {
+export default function NuevoProductoScreen() {
   const navigation = useNavigation<any>();
 
   const [title, setTitle] = useState("");
@@ -65,9 +65,7 @@ export default function PantallaCrear() {
         placeholderTextColor="#888"
       />
 
-      <TouchableOpacity style={styles.boton} onPress={crear}>
-        <Text style={styles.botonTexto}>Crear producto</Text>
-      </TouchableOpacity>
+      <Button title="Crear producto" onPress={crear} />
     </View>
   );
 }
@@ -86,24 +84,6 @@ const styles = StyleSheet.create({
     borderColor: "#e3e8ee",
     padding: 14,
     borderRadius: 12,
-    fontSize: 16,
-  },
-  boton: {
-    backgroundColor: "#3b82f6",
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    borderRadius: 25,
-    marginTop: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
-  },
-  botonTexto: {
-    color: "#fff",
-    textAlign: "center",
-    fontWeight: "600",
     fontSize: 16,
   },
 });
